@@ -8,7 +8,7 @@
   <meta name="description" content="Just how trendddy are you?">
   <meta name="author" content="@indifferentalex">
 
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="swag.css">
@@ -16,15 +16,16 @@
 </head>
 
 <body>
-	<div class="bbbanner">
+	<div id="bbbanner" class="bbbanner">
 	</div>
 
 	<div class="container">
 		<div id="rounds-left" class="panel">
 			<h6>ROUNDS LEFT</h6>
-			<h3>20</h3>
+			<h3>10</h3>
 		</div>
 		<div id="score" class="panel">
+			<h3 id="score-spectre" class="score-spectre" style="display: none;"></h3>
 			<h6>SCORE</h6>
 			<h3>0</h3>
 		</div>
@@ -35,6 +36,12 @@
 			<div id="flip-container" class="flip-container">
 				<div class="flipper">
 					<div class="front">
+						<div id="game-over-screen" class="game-over-screen" style="display: none;">
+							<h1>Your score is <span id="final-game-score">420</span></h1>
+							<div>
+								<a class="play-again" href="/">Play again</a> <a id="twitter-share-button" class="twitter-share-button" href="https://twitter.com/share" data-size="large" data-text="I scored 123 on Trendddy, a Dribbble quiz game.">Tweet</a>
+							</div>
+						</div>
 						<img id="shot" src="" />
 					</div>
 					<div class="back">
@@ -42,17 +49,49 @@
 
 						</div>
 
-						<img id="dribbbler-image" src="" />
-						<div id="dribbbler-name"></div>
+						<div class="dribbbler-details">
+							<a id="dribbbler-url" href="#" target="_blank">
+								<img id="dribbbler-image" class="dribbbler-image" src="" />
+								<div id="dribbbler-name" class="dribbbler-name"></div>
+							</a>
 
-						<div class="separator"></div>
+							<div class="dribbbler-links">
+								<a id="dribbbler-location" class="dribbbler-location" href="#" target="_blank"></a>
+								<span id="dribbbler-spacing" class="dribbbler-spacing" style="display: none;"></span>
+								<a id="dribbbler-site" class="dribbbler-site" href="#" target="_blank"></a>
+							</div>
+<!-- 							<div id="dribbbler-bio" class="dribbbler-bio"></div> -->
+<!-- 							<div class="dribbbler-stats">
+								<div id="dribbbler-shots"><b>123</b> Shots</div>
+								<div id="dribbblers-likes"><b>420</b> Followers</div>
+							</div> -->
+						</div>
+
+						<div class="dribbbler-shot">
+							<a id="tiny-shot-url" href="" target="_blank">
+								<img id="tiny-shot" class="tiny-shot" src="" />
+							</a>
+							<div class="shot-details">
+								<!-- <div id="shot-title" class="shot-title"></div> -->
+								<div id="shot-creation" class="shot-creation"></div>
+							</div>
+						</div>
+
 						<div class="countdown"><p id="countdown-text">Next round starting in 5 seconds</p></div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="guess-selection" class="guess-selection">
+		<div class="guess-selection-wrapper">
+			<div id="guess-selection" class="guess-selection">
+
+			</div>
+		</div>
+
+		<div class="just-some-text">
+			<p>Use the timeline to guess when you think the shot was posted, the closer your guess the more points you get!</p>
+			<p>Built by <a href="https://twitter.com/indifferentalex">@indifferentalex</a>, design inspired by <a href="https://dribbble.com/">Dribbble</a> and <a href="http://gabrielecirulli.github.io/2048/">2048</a>. Possible thanks to the Dribbble API. If you enjoyed playing and think I did a decent job with the UI please consider giving me an invite!</p>
 		</div>
 
 		<div id="date" style="display: none;"></div>
