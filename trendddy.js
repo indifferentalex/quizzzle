@@ -53,8 +53,6 @@ function loadNextShot(initial) {
 
 	    usedPosts.push(chosenShot.id);
 
-	    alert(usedPosts);
-
 	    if (chosenShot.images.hidpi) {
 	    	shot.setAttribute("src", chosenShot.images.hidpi);
 	    } else {
