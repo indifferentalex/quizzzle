@@ -385,6 +385,10 @@ window.onload = function() {
 			}
 
 			if (roundsLeft > 0) {
+				// in case next shot takes a lot of time to load, user won't see previous one and be confused
+				shot = document.getElementById("shot");
+	    	shot.setAttribute("src", "");
+
 				loadNextShot(false);
 			} else {
 				document.getElementById("game-over-screen").style.display = "";
