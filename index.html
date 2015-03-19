@@ -8,23 +8,54 @@
   <meta name="description" content="Just how trendddy are you?">
   <meta name="author" content="@indifferentalex">
 
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="swag.css">
   <script src="trendddy.js"></script>
 </head>
 
 <body>
-	<img id="dribbbler-image" src="" />
-	<div id="dribbbler-name"></div>
-	<img id="shot" src="" />
-	<div id="date" style="display: none;"></div>
+	<div class="bbbanner">
+	</div>
 
-	<div id="guess-options">
-		<div id="2009" class="guess">2009</div>
-		<div id="2010" class="guess">2010</div>
-		<div id="2011" class="guess">2011</div>
-		<div id="2012" class="guess">2012</div>
-		<div id="2013" class="guess">2013</div>
-		<div id="2014" class="guess">2014</div>
-		<div id="2015" class="guess">2015</div>
+	<div class="container">
+		<div id="rounds-left" class="panel">
+			<h6>ROUNDS LEFT</h6>
+			<h3>20</h3>
+		</div>
+		<div id="score" class="panel">
+			<h6>SCORE</h6>
+			<h3>0</h3>
+		</div>
+
+		<h1 class="trendddy">trendddy</h1>
+
+		<div class="image-container">
+			<div id="flip-container" class="flip-container">
+				<div class="flipper">
+					<div class="front">
+						<img id="shot" src="" />
+					</div>
+					<div class="back">
+						<div class="header">
+
+						</div>
+
+						<img id="dribbbler-image" src="" />
+						<div id="dribbbler-name"></div>
+
+						<div class="separator"></div>
+						<div class="countdown"><p id="countdown-text">Next round starting in 5 seconds</p></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="guess-selection" class="guess-selection">
+		</div>
+
+		<div id="date" style="display: none;"></div>
 	</div>
 </body>
 </html>

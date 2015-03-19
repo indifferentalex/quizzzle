@@ -1,0 +1,183 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #f0f0f0;
+	margin: 0px;
+}
+
+.bbbanner {
+	position: absolute;
+	z-index: -1;
+	height: 200px;
+	width: 100%;
+	background: #9ba5a8;
+}
+
+.panel {
+	width: 100px;
+	margin-left: 10px;
+
+	text-align: center;
+	padding: 8px 0px;
+	background: rgba(255, 255, 255, 0.75);
+
+	float: right;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.panel:hover {
+	background: rgba(255, 255, 255, 1);
+}
+
+.panel h3 {
+	color: rgba(0, 0, 0, 0.9);
+	margin: 5px 0px 0px 0px;
+}
+
+.panel h6 {
+	color: rgba(0, 0, 0, 0.7);
+	margin: 0px;
+}
+
+.container {
+	width: 440px;
+	padding-top: 50px;
+	margin: 0px auto;
+}
+
+h1.trendddy {
+	color: #fff;
+	font-weight: 700;
+	/*font-family: 'Pacifico', cursive;*/
+}
+
+.image-container {
+	background: #fff;
+	height: 300px;
+	padding: 20px;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+	-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+.image-container .front img {
+	max-width: 400px;
+	max-height: 300px;
+}
+
+.image-container .back img {
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	/*border: 1px solid #e5e5e5;*/
+	background: #fff;
+}
+
+.guess-selection {
+	cursor: pointer;
+
+	height: 50px;
+	margin-top: 30px;
+	background: #9ba5a8;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+	-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+.guess-selection .guess-segment {
+	display: inline-block;
+	height: 50px;
+	width: 6px;
+}
+
+.guess-selection .guess-segment .guess-tooltip {
+	position: absolute;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+
+/* flip the pane when hovered */
+.flip-container.hover .flipper, .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 400px;
+	height: 300px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.5s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.back .header {
+	position: absolute;
+	z-index: -1;
+	width: 440px;
+	height: 67px;
+	border-bottom: 1px solid #e5e5e5;
+	background: #eee;
+	margin-top: -20px;
+	margin-left: -20px;
+
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.back .separator {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.back .countdown {
+	text-align: center;
+}
