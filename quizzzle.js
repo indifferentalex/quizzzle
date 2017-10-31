@@ -1,10 +1,12 @@
 var score = 0;
 var roundsLeft = 20;
 
-var months = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var months = ["", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 var tierScore = [0, 128, 64, 32, 16];
 var lastImage = null;
 var usedPosts = [];
+
+var guessSegmentWidth = null;
 
 function addHexColor(c1, c2) {
   var hexStr = (parseInt(c1, 16) + parseInt(c2, 16)).toString(16);
@@ -146,7 +148,7 @@ window.onload = function() {
 	var monthlySegments = 6 + 12 * (yyyy - 2010) + mm;
 
 	var guessSelection = document.getElementById("guess-selection");
-	var guessSegmentWidth = Math.round(440 / monthlySegments * 100) / 100;
+	guessSegmentWidth = Math.round(440 / monthlySegments * 100) / 100;
 
 	mm = 7;
 	yyyy = 2009;
@@ -168,7 +170,7 @@ window.onload = function() {
     var guess = guesses[i];
 
     guess.onmouseenter = function() {
-    	document.getElementById("guess-selection").style.paddingTop = "0px";
+    	// document.getElementById("guess-selection").style.paddingTop = "0px";
 
     	this.children[0].style.display = "";
 
@@ -207,6 +209,20 @@ window.onload = function() {
 			for (j = from; j <= to; j++) {
 				currentSegment = document.getElementById(j.toString());
 
+				var correctMargin = 0;
+				var guessSegmentStart = j * guessSegmentWidth;
+
+				if (guessSegmentStart < 35) {
+					console.log(guessSegmentStart)
+					correctMargin = -1 * (guessSegmentStart) - 30;
+				} else if (guessSegmentStart > 400) {
+					correctMargin = -70 - (guessSegmentStart - 400);
+				} else {
+					correctMargin = -70;
+				}
+				console.log(correctMargin);
+				currentSegment.children[0].style.marginLeft = correctMargin.toString() + "px";
+
 				if (currentSegment.classList) {
 				  currentSegment.classList.add("active");
 				} else {
@@ -216,7 +232,7 @@ window.onload = function() {
     }
 
     guess.onmouseleave = function() {
-    	document.getElementById("guess-selection").style.paddingTop = "3px";
+    	// document.getElementById("guess-selection").style.paddingTop = "3px";
 
     	this.children[0].style.display = "none";
 
@@ -265,23 +281,23 @@ window.onload = function() {
     	j = correctSegment;
     	i = 0;
 
-    	var initialColor = "A84CB2";
+    	// var initialColor = "A84CB2";
 
-    	function gradientOut(color, j, i) {
-	    	if (j - i >= 0 || j + i < monthlySegments) {
-	    		if (j - i >= 0) {
-	    			document.getElementById(parseInt(j - i)).style.background = "#" + color;
-	    		}
+    	// function gradientOut(color, j, i) {
+	    // 	if (j - i >= 0 || j + i < monthlySegments) {
+	    // 		if (j - i >= 0) {
+	    // 			document.getElementById(parseInt(j - i)).style.background = "#" + color;
+	    // 		}
 
-	    		if (j + i < monthlySegments) {
-	    			document.getElementById(parseInt(j + i)).style.background = "#" + color;
-	    		}
+	    // 		if (j + i < monthlySegments) {
+	    // 			document.getElementById(parseInt(j + i)).style.background = "#" + color;
+	    // 		}
 
-	    		setTimeout(function() { gradientOut(addHexColor(color, "010101"), j, i + 1); }, 5);	
-	    	}   		
-    	}
+	    // 		setTimeout(function() { gradientOut(addHexColor(color, "010101"), j, i + 1); }, 5);	
+	    // 	}   		
+    	// }
 
-    	gradientOut(initialColor, j, 0);
+    	// gradientOut(initialColor, j, 0);
 
     	// tier 1: 3 segments up and down
     	j = (correctSegment >= 3 ? correctSegment - 3 : 0);
@@ -452,7 +468,7 @@ window.onload = function() {
 					  guesses[c].tierFour = guesses[j].tierFour.replace(new RegExp('(^|\\b)' + "tier-four".split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 					}		
 
-					guesses[c].style.background = "#72787a";
+					guesses[c].style.background = "#fff";
 
 					setTimeout(function() { clearTieredSegment(c + 1); }, 20);			
 				}

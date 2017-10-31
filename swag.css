@@ -79,7 +79,7 @@ body {
 
 .container {
 	width: 440px;
-	padding-top: 50px;
+	padding-top: 36px;
 	margin: 0px auto;
 }
 
@@ -99,7 +99,7 @@ h1.quizzzle {
 	background: #fff;
 	height: 300px;
 	padding: 20px;
-	margin-bottom: 50px;
+	margin-bottom: 75px;
 
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -132,7 +132,7 @@ h1.quizzzle {
 .guess-selection {
 	cursor: pointer;
 
-	padding-top: 3px;
+	/*padding-top: 3px;*/
 	height: 50px;
 	margin-top: 30px;
 	/*background: #9ba5a8;*/
@@ -141,9 +141,9 @@ h1.quizzzle {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 
-/*	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
 	-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);*/
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
 }
 
 .guess-selection.animations-active .guess-segment {
@@ -154,6 +154,8 @@ h1.quizzzle {
 }
 
 .guess-selection .guess-segment {
+	z-index: 2;
+
 	background: #9ba5a8;
 	display: inline-block;
 	height: 50px;
@@ -181,25 +183,27 @@ h1.quizzzle {
 
 .guess-selection .guess-segment.even-year {
 	/*background: #949c9e;*/
-	background: #72787a;
+	background: #fff;
 }
 
 .guess-selection .guess-segment.odd-year {
-	background: #8e9699;
+	background: #fff;
 }
 
 .guess-selection .guess-segment.active {
-	margin-bottom: -3px;
-	height: 56px;
-	background: #ea4c89;
+	/*background: rgba(234, 76, 137, 1);*/
+	/*border-bottom: 3px solid #ea4c89;*/
+	/*margin-bottom: -3px;*/
+	/*height: 47px;*/
+	/*background: #ea4c89;*/
 
-	-webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+/*	-webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
-	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);*/
 }
 
 .guess-selection .guess-segment.active.even-year {
-	background: #df3b7a;
+	/*background: #df3b7a;*/
 }
 
 .guess-selection .guess-segment.active.odd-year {
@@ -271,29 +275,79 @@ h1.quizzzle {
 }
 */
 .guess-selection .guess-segment .guess-tooltip {
+	z-index: -1;
+
 	pointer-events: none;
-	width: 100px;
-	color: #fff;
-	text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.85);
+	line-height: 35px;
+	height: 35px;
+	width: 160px;
+	color: #9ba5a8;
+	/*background-color: rgba(234, 76, 137, 0.2);*/
+	/* text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.85); */
+	font-size: 18px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 300;
-	margin-left: -43px;
-	margin-top: 10px;
+	/*margin-left: -68px;*/
+	/*margin-top: 10px;*/
 	text-align: center;
 	position: absolute;
+	/*border-bottom: 3px solid #ea4c89;*/
 }
 
 .guess-selection .guess-segment .guess-tooltip span {
-	color: rgba(255, 255, 255, 1);
+	color: #9ba5a8;
 }
 
 .guess-selection .guess-segment .guess-tooltip span.tooltip-month {
+	z-index: 1;
+
+	/*color: rgba(0, 0, 0, 0.7);*/
+	display: inline-block;
+	width: 70px;
+
+	color: #fff;
 	position: relative;
+	margin-left: -18px;
 	top: -35px;
+
+	background: #ea4c89;
+/*	border-top: 1px solid #ea4c89;
+	border-right: 1px solid #ea4c89;
+	border-left: 1px solid #ea4c89;*/
+
+	/*padding: 5px 5px 10px 5px;*/
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;	
 }
 
 .guess-selection .guess-segment .guess-tooltip span.tooltip-year {
+	z-index: 1;
+
+	/*color: rgba(234, 76, 137, 1);*/
+	display: inline-block;
+	width: 70px;
+
+	color: #fff;
 	position: relative;
-	top: 35px;
+	margin-left: -18px;
+	top: 15px;
+
+	background: #ea4c89;
+/*	border-bottom: 1px solid #ea4c89;
+	border-right: 1px solid #ea4c89;
+	border-left: 1px solid #ea4c89;*/
+
+	/*padding: 10px 5px 5px 5px;*/
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;		
 }
 
 /* entire container, keeps perspective */
@@ -478,7 +532,7 @@ h1.quizzzle {
 }
 
 .just-some-text {
-	margin-top: 70px;
+	margin: 50px 0px 30px 0px;
 }
 
 .just-some-text p {
@@ -486,7 +540,8 @@ h1.quizzzle {
 	line-height: 28px;
 	margin-bottom: 24px;
 
-	font-family: 'Slabo 27px', serif;
+	/*font-family: 'Slabo 27px', serif;*/
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #222;
 }
 
